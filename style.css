@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+:root {
+	--dark: black;
+	--darker: #525280;
+	--darkest:rgb(54 76 151);
+	--grey: #b3a236;
+	--pink: #EC4899;
+	--purple: #8B5CF6;
+	--light: #67d9d3;
+	--yellow: #ffffc2;
+	--gold: #fdd017;
+
+	--darkblue: #0a1172;
+	--midblue: #0492c2;
+	--lightblue: #63c5da;
+
+	--verydarkbrown: #2e1503;
+	--darkbrown: #65350f;
+	--midbrown: #80471c;
+	--lightbrown: #9a7b4f;
+
+	--darkred: #800000;
+	--midbred: #c21a09;
+	--lightred: #ff2400;
+	--blood: #800808;
+	--ruby: #db0f27;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Fira sans", sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: #FFF;
+	background-image: url("images/todobg.jpg");
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-size: cover;
+}
+
+header {
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header h1{ 
+	font-family: "Monotype Corsiva";
+	font-size: 60px;
+	font-weight: 800;
+	color: var(--darkbrown);
+	margin-bottom: 2rem;
+}
+
+#new-task-form {
+	display: flex;;
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#new-task-input {
+	flex: 1 1 0%;
+	background-color: var(--lightbrown);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	color: var(--white);
+	font-size: 1.25rem;
+}
+
+#new-task-date {
+	flex: 1 1 0%;
+	background-color: var(--lightbrown);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	color: var(--yellow);
+	font-size: 1rem;
+}
+
+#new-task-input::placeholder {
+	color: var(--white);
+	font-size: 0.9rem;
+}
+
+#new-task-submit {
+	color: var(--gold);
+	font-size: 1.25rem;
+	font-weight: 700;
+	background-image: linear-gradient(to right, var(--lightbrown), var(--midbrown));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+#new-task-submit:hover {
+	opacity: 0.8;
+}
+
+#new-task-submit:active {
+	opacity: 0.6;
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task-list h2 {
+	font-family: "Monotype Corsiva";
+	font-size: 35px;
+	font-weight: 600;
+	color: var(--darkbrown);
+	margin-bottom: 1rem;
+}
+
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	background-image: linear-gradient(to right, var(--midbrown), var(--yellow));
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+	color: var(--white);
+	font-size: 1.125rem;
+	width: 50%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .date {
+	color: var(--yellow);
+	font-size: 0.750rem;
+	width: 50%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+	color: var(--pink);
+}
+
+.task .actions {
+	display: flex;
+	margin: 0 -0.5rem;
+	border-radius: 5px;
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.task .actions button:hover {
+	opacity: 0.8;
+}
+
+.task .actions button:active {
+	opacity: 0.6;
+}
+
+.task .actions .edit {
+	background-image: linear-gradient(to right, darkcyan, royalblue);
+	-webkit-text-fill-color: cyan ;
+}
+
+.task .actions .delete {
+	background-image: linear-gradient(to right, var(--lightred), var(--lightred));
+	-webkit-text-fill-color: var(--blood);
+}
